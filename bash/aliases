@@ -1,0 +1,10 @@
+alias ls='ls -FG'
+alias auto='~/bin/airportctl auto'
+alias office='~/bin/airportctl office'
+alias vw='open ~/vw7.5nc/image/simple.im' # VisualWorks
+function promptcolors {
+	for color in `fgrep \\e ~/bin/dotfiles/bash/config | fgrep -v '#' | cut -f1 -d=`
+	do
+		echo -e ${!color}$color$NO_COLOR
+	done
+}

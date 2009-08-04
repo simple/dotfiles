@@ -1,0 +1,8 @@
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+PATH=$HOME/bin:$PATH
+PATH=/opt/local/bin:/opt/local/sbin:$PATH
+MANPATH=/opt/local/share/man:$MANPATH
+export PATH MANPATH
+
+export EDITOR="mate -w"
+export VISUALWORKS=$HOME/vw75nc
