@@ -2,9 +2,17 @@ alias ls='ls -FG'
 alias auto='~/bin/airportctl auto'
 alias office='~/bin/airportctl office'
 alias vw='open ~/vw7.5nc/image/simple.im' # VisualWorks
+alias seq='gseq'
+alias open_zend='mate /opt/local/lib/ZendFramework/library/Zend'
+alias sandbox='mate ~/src/sandbox'
+
 function promptcolors {
-	for color in `fgrep \\e ~/bin/dotfiles/bash/config | fgrep -v '#' | cut -f1 -d=`
+	for color in `fgrep \\e ~/dotfiles/bash/config | fgrep -v '#' | cut -f1 -d=`
 	do
 		echo -e ${!color}$color$NO_COLOR
 	done
+}
+
+function ovj {
+	ssh kiwiple@$1.ovjet.com
 }

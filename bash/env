@@ -4,5 +4,13 @@ PATH=/opt/local/bin:/opt/local/sbin:$PATH
 MANPATH=/opt/local/share/man:$MANPATH
 export PATH MANPATH
 
+export LANG=ko_KR.UTF-8
 export EDITOR="mate -w"
-export VISUALWORKS=$HOME/vw75nc
+export HISTCONTROL=erasedups
+export HISTSIZE=10000
+shopt -s histappend
+
+
+if [ -f /opt/local/etc/bash_completion ]; then
+    . /opt/local/etc/bash_completion
+fi
