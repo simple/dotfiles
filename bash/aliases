@@ -16,3 +16,19 @@ function promptcolors {
 function ovj {
 	ssh kiwiple@$1.ovjet.com
 }
+
+function dev {
+	if [ "$1" = "simple" ]; then
+		ssh simple@dev.kiwiple.com
+	else
+		ssh kiwiple@dev.ovjet.com
+	fi
+}
+
+function tacoo {
+	if [ "$1" = "mdb" ]; then
+		ssh kiwiple@mdb.tacoo.co.kr
+	else
+		ssh kiwiple@api.tacoo.co.kr
+	fi
+}
