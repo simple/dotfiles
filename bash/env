@@ -6,6 +6,8 @@ export PATH MANPATH
 
 export LANG=ko_KR.UTF-8
 export EDITOR="mate -w"
+export CLICOLOR=1
+export LSCOLORS="ExGxFxdxCxDxDxhbadExEx"
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
