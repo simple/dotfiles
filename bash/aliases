@@ -25,6 +25,14 @@ function dev {
 	fi
 }
 
+function collab {
+	if [ "$1" = "simple" ]; then
+		ssh simple@collab
+	else
+		ssh kiwiple@collab
+	fi
+}
+
 function tacoo {
 	if [ "$1" = "mdb" ]; then
 		ssh kiwiple@mdb.tacoo.co.kr
