@@ -5,6 +5,7 @@ alias vw='open ~/vw7.5nc/image/simple.im' # VisualWorks
 alias seq='gseq'
 alias open_zend='mate /opt/local/lib/ZendFramework/library/Zend'
 alias sandbox='mate ~/src/sandbox'
+alias u-web='ssh -p 2222 kiwiple@u-web.kiwiple.com'
 
 function promptcolors {
 	for color in `fgrep \\e ~/dotfiles/bash/config | fgrep -v '#' | cut -f1 -d=`
