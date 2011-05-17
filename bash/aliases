@@ -1,4 +1,4 @@
-alias ls='ls -FG'
+alias ls='ls -FGH'
 alias auto='~/bin/airportctl auto'
 alias office='~/bin/airportctl office'
 alias vw='open ~/vw7.5nc/image/simple.im' # VisualWorks
