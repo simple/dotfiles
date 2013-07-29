@@ -38,7 +38,7 @@ BMAGENTA='\e[45m'
 BCYAN='\e[46m'
 BWHITE='\e[47m'
 
-#Arrows:  → ↛ ⇾ ↝ ↠ ↣ ↦ ↬ ⇒ ⇛ ⇢ ⇥ ⇨ ⇰ ⇸ ⇾ ↳ ↪
+# Arrows:  → ↛ ⇾ ↝ ↠ ↣ ↦ ↬ ⇒ ⇛ ⇢ ⇥ ⇨ ⇰ ⇸ ⇾ ↳ ↪
 ARROW1="→"
 ARROW2="↛"
 ARROW3="⇾"
@@ -58,5 +58,12 @@ ARROW16="⇾"
 ARROW17="↳"
 ARROW18="↪"
 
-PS1="\n\u\[$ERED\]@\h:\[$NO_COLOR\]\w \[$EBLACK\]\$(vcprompt)\[$NO_COLOR\] \n$ARROW1 "
-PS2="$ARROW18 "
+# emoji
+# check http://en.wikipedia.org/wiki/Emoji
+EMJ_HOST="💻"
+EMJ_DIR="📂"
+EMJ_CLOCK="🕙"
+EMJ_FIRE="🔥"
+EMJ_SANTA="🎅"
+EMJ_SNAKE="🐍"
+export EMJ_HOST EMJ_DIR EMJ_CLOCK EMJ_FIRE EMJ_SANTA EMJ_SNAKE
