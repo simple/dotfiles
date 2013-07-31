@@ -14,7 +14,7 @@ alias ls='ls -FGH'
 ## Prompt settings
 [[ -s "$PRF/prompt_resources" ]] && source $PRF/prompt_resources
 
-PS1="\n\[$EBLACK\][\$(date +'%H:%M:%S')]\[$ERED\]@\h:\[$NO_COLOR\]\w \[$EBLACK\]\$(vcprompt)\[$NO_COLOR\] \n$EMJ_SANTA  \u $ARROW1 "
+PS1="\n\[$EBLACK\][\$(date +'%H:%M:%S')]\[$ERED\]@\h:\[$NO_COLOR\]\w \[$EBLACK\]\$(vcprompt)\[$NO_COLOR\] \n$EMJ_SANTA  "
 PS2="$ARROW18 "
 
 ## Load secrets
