@@ -60,10 +60,13 @@ ARROW18="↪"
 
 # emoji
 # check http://en.wikipedia.org/wiki/Emoji
-EMJ_HOST="💻"
-EMJ_DIR="📂"
-EMJ_CLOCK="🕙"
-EMJ_FIRE="🔥"
-EMJ_SANTA="🎅"
-EMJ_SNAKE="🐍"
-export EMJ_HOST EMJ_DIR EMJ_CLOCK EMJ_FIRE EMJ_SANTA EMJ_SNAKE
+function emoji {
+	[[ -z $1 ]] && echo -n ""
+	[[ $1 == "host" ]] && echo -n 💻
+	[[ $1 == "dir" ]] && echo -n 📂
+	[[ $1 == "clock" ]] && echo -n 🕙
+	[[ $1 == "fire" ]] && echo -n 🔥
+	[[ $1 == "santa" ]] && echo -n 🎅
+	[[ $1 == "snake" ]] && echo -n 🐍
+	[[ $1 == "rocket" ]] && echo -n 🚀
+}
