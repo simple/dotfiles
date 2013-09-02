@@ -61,7 +61,7 @@ ARROW18="↪"
 # emoji
 # check http://en.wikipedia.org/wiki/Emoji
 function emoji {
-	[[ -z $1 ]] && echo -n ""
+	[[ -z $1 ]] && echo -n "" && return
 	[[ $1 == "host" ]] && echo -n 💻
 	[[ $1 == "dir" ]] && echo -n 📂
 	[[ $1 == "clock" ]] && echo -n 🕙
@@ -69,4 +69,5 @@ function emoji {
 	[[ $1 == "santa" ]] && echo -n 🎅
 	[[ $1 == "snake" ]] && echo -n 🐍
 	[[ $1 == "rocket" ]] && echo -n 🚀
+	[[ $1 == "scream" ]] && echo -n 😱
 }
