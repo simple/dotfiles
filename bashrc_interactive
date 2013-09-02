@@ -23,14 +23,22 @@ function venvps1 {
 function envs_prompt {
 	[[ -z "$(rvmps1)$(venvps1)" ]] || printf "%s" "$(rvmps1)$(venvps1) "
 }
-PS1="\n\[$EBLACK\][\$(date +'%H:%M:%S')]\[$ERED\]@\h:\[$NO_COLOR\]\w \[$EBLACK\]\$(vcprompt -f "[%b@%r]")\[$NO_COLOR\] \n\$(envs_prompt)\$(emoji santa)  "
+function ps1_from_exit_status {
+	if [ $1 -eq 0 ]; then face=$(emoji santa); else face=$(emoji scream); fi
+	printf "\n$EBLACK[$(date +'%H:%M:%S')]$ERED@$(hostname -s):$NO_COLOR"
+	printf "$(pwd | sed -e 's@/Users/simple@~@') "
+	printf "$EBLACK$(vcprompt -f "[%b@%r]")$NO_COLOR\n"
+	printf "$(envs_prompt)$face  "
+}
+PS1="\$(ps1_from_exit_status \$?)"
 PS2="$ARROW18 "
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 ## Load secrets
 [[ -s "$PRF/secrets" ]] && source "$PRF/secrets"
 
 ## Configure tools
-PATH=$PATH:$HOME/.rvm/bin
+PATH=$HOME/.rvm/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # virtualenvwrapper
