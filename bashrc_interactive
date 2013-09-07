@@ -42,8 +42,6 @@ PATH=$HOME/.rvm/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # virtualenvwrapper
-WORKON_HOME=$HOME/Envs
-export WORKON_HOME
 [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
 
 # virtualenv settings from hackercodex.com
