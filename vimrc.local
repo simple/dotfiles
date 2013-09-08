@@ -1,4 +1,3 @@
-colorscheme ir_black
 let g:snips_author="Leo Ju"
 let g:author="Leo Ju"
 let g:snips_email="mr.simple@gmail.com"
@@ -8,5 +7,7 @@ let g:github="https://github.com/simple"
 
 let g:mapleader=","
 
-set nofoldenable                " disable code folding
+colorscheme molokai
+
 let g:DisableAutoPHPFolding = 1 " disable PIV's folding
+set nofoldenable                " disable code folding
