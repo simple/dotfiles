@@ -7,6 +7,8 @@ let g:github="https://github.com/simple"
 
 let g:mapleader=","
 
+autocmd FileType python map <Leader>c : call Flake8()<CR>
+
 colorscheme molokai
 
 let g:DisableAutoPHPFolding = 1 " disable PIV's folding
