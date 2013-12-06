@@ -41,6 +41,10 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 PATH=$HOME/.rvm/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+## git completion
+GIT_COMPLETION_FILE=/usr/local/etc/bash_completion.d/git-completion.bash
+[[ -s $GIT_COMPLETION_FILE ]] && source $GIT_COMPLETION_FILE
+
 # virtualenvwrapper
 [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
 
