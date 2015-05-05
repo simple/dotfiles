@@ -1,0 +1,5 @@
+#!/bin/bash
+if [ ! -f "$1" ]; then
+	touch $1
+fi
+/Applications/Marked.app/Contents/Resources/mark $*
