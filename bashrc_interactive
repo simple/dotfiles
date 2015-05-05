@@ -7,7 +7,16 @@ shopt -s histappend
 
 export GOPATH=$HOME/.golang
 # OS X: modify /etc/paths to make '/usr/local/bin' be the first one
-export PATH=$PATH:$HOME/bin:$GOPATH/bin
+# GOROOT/bin: /usr/local/opt/go/libexec/bin
+PATH=$PATH:$HOME/bin:$GOPATH/bin:/usr/local/opt/go/libexec/bin:/usr/texbin:/opt/local/bin
+
+# Pebble SDK
+PATH=$PATH:/Users/simple/pebble/sdk/bin
+
+export PATH
+
+export JAVA_HOME="$(/usr/libexec/java_home)"
+
 
 ## Aliases
 alias ls='ls -FGH'
@@ -19,6 +28,9 @@ alias gl='git pull'
 alias gp='git push'
 alias gst='git status'
 alias git-aliases='alias | grep git'
+alias win7='open "$HOME/VirtualBox VMs/win7/win7.vbox"'
+alias ubuntu="VBoxManage startvm ubuntu15.04 --type headless"
+alias ubuntu-stop="VBoxManage controlvm ubuntu15.04 poweroff"
 
 ## Prompt settings
 [[ -s "$PRF/prompt_resources" ]] && source $PRF/prompt_resources
@@ -33,10 +45,10 @@ function envs_prompt {
 	[[ -z "$(rvmps1)$(venvps1)" ]] || printf "%s" "$(rvmps1)$(venvps1) "
 }
 function ps1_from_exit_status {
-	if [ $1 -eq 0 ]; then face=$(emoji santa); else face=$(emoji scream); fi
+	if [ $1 -eq 0 ]; then face=$(emoji yheart); else face=$(emoji scream); fi
 	printf "\n$EBLACK[$(date +'%H:%M:%S')]$ERED@$(hostname -s):$NO_COLOR"
 	printf "$(pwd | sed -e 's@/Users/simple@~@') "
-	printf "$EGREEN$(vcprompt -f "[%b %u%m@%r]")$NO_COLOR\n"
+	printf "$EGREEN$(vcprompt -f "[%b%u%m@%r]")$NO_COLOR\n"
 	printf "$(envs_prompt)$face  "
 }
 PS1="\$(ps1_from_exit_status \$?)"
@@ -66,16 +78,30 @@ export VIRTUALENV_DISTRIBUTE=true
 export PIP_VIRTUALENV_BASE=$HOME/Virtualenvs
 # pip should only run if there is a virtualenv currently activated
 export PIP_REQUIRE_VIRTUALENV=true
-# cache pip-installed packages to avoid re-downloading
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 
 function syspip() {
 	PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
-## { AWS ec2 tools
-export EC2_URL=https://ec2.ap-southeast-1.amazonaws.com:443
-export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY
-export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
-export AWS_EC2_REGION=ap-southeast-1
-## } AWS ec2 tools
+ANDROID_HOME=/usr/local/opt/android-sdk
+
+export LC_ALL=ko_KR.UTF-8
+export LANG=ko_KR.UTF-8
+
+## { custom functions for command line use.
+function mkpasswd {
+    re='^[0-9]+$'
+    if [[ $1 =~ $re && $1 -ge 10 && $1 -le 20 ]]; then
+        length=$1
+    else
+        length=15
+    fi
+    openssl rand -base64 $length
+}
+
+function mkpasswds {
+    for i in $(seq 1 10); do
+        mkpasswd $1
+    done
+}
+## }

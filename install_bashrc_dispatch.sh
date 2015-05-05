@@ -27,6 +27,7 @@ fi
 cat $TMPL_FILE| sed "s@PRF=.*@PRF=$DIR/@" > bashrc_dispatch
 rm -f $TMPL_FILE
 
+echo "alias dotfiles='cd $DIR'" >> bashrc_dispatch
 # backup bashrc related files and make symlinks
 mkdir bash_backup
 mv ~/.bashrc ~/.bash_profile ~/.profile ~/.bash_login bash_backup/
