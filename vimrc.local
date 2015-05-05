@@ -25,7 +25,6 @@ let NERDTreeQuitOnOpen=0
 
 autocmd FileType * set ts=2 sw=2 sts=2 expandtab
 autocmd FileType python,php,c setlocal ts=4 sw=4 sts=4 expandtab
-let g:airline_powerline_fonts = 1
 
 " Pebble Development
 autocmd BufNewFile,BufRead ~/pebble/*.{c,h} setlocal tags=~/pebble/sdk/basalt.tags

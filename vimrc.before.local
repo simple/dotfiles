@@ -1,0 +1,37 @@
+" Modeline and Notes {
+" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker:
+"
+"   This file is for options which must be set *before* plugins
+"   are loaded and the main .vimrc config is run. Most of these
+"   are for preventing mappings or commands from being created.
+"
+" }
+
+" Prevent automatically changing to open file directory
+let g:spf13_no_autochdir = 1
+
+" Disable views
+let g:spf13_no_views = 1
+
+" Enable powerline symbols
+let g:airline_powerline_fonts = 1
+
+" For some colorschemes, autocolor will not work (eg: 'desert', 'ir_black')
+" Indent guides will attempt to set your colors smartly. If you
+" want to control them yourself, do it here.
+"   let g:indent_guides_auto_colors = 0
+"   autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#212121 ctermbg=233
+"   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#404040 ctermbg=234
+
+" Don't create default mappings for multicursors
+" See :help multiple-cursors-mappings
+"   let g:multi_cursor_use_default_mapping=0
+"   let g:multi_cursor_next_key='<C-n>'
+"   let g:multi_cursor_prev_key='<C-p>'
+"   let g:multi_cursor_skip_key='<C-x>'
+"   let g:multi_cursor_quit_key='<Esc>'
+" Require a special keypress to enter multiple cursors mode
+"   let g:multi_cursor_start_key='+'
+
+" Plugin Groups
+let g:spf13_bundle_groups=['general', 'programming', 'misc', 'ruby', 'snipmate', 'python', 'youcompleteme', 'go', 'html']
