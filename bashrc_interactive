@@ -83,6 +83,10 @@ function syspip() {
 	PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
+function syspip3() {
+	PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
+}
+
 ANDROID_HOME=/usr/local/opt/android-sdk
 
 export LC_ALL=ko_KR.UTF-8
