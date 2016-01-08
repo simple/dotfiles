@@ -15,7 +15,7 @@ cd $DIR
 
 # download bashrc_dispatch
 TMPL_FILE=bashrc_dispatch.tmpl
-curl https://raw.github.com/josephwecker/bashrc_dispatch/master/bashrc_dispatch > $TMPL_FILE
+curl -sSL https://raw.github.com/josephwecker/bashrc_dispatch/master/bashrc_dispatch > $TMPL_FILE
 
 # check whether the prefix variable still exists.
 fgrep 'PRF=' $TMPL_FILE > /dev/null
