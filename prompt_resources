@@ -71,7 +71,7 @@ function is_first_call()
 function emoji {
 	[[ -z $1 ]] && echo -n "" && return
     [[ $(is_first_call) == 1 ]] && echo -n "${EYELLOW}2014/04/16$NO_COLOR "
-    [[ $1 == "yheart" ]] && echo -n 💛
+    [[ $1 == "yheart" ]] && echo -n 🎗 # 💛
 	[[ $1 == "scream" ]] && echo -n 😱
 	[[ $1 == "rocket" ]] && echo -n 🚀
 	[[ $1 == "snake" ]] && echo -n 🐍
