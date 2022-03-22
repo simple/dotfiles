@@ -63,20 +63,20 @@ ARROW18="↪"
 echo "1" > /tmp/20140416_one_time_true
 function is_first_call()
 {
-    read v < /tmp/20140416_one_time_true
-    echo "0" > /tmp/20140416_one_time_true
-    echo $v
+	read v < /tmp/20140416_one_time_true
+	echo "0" > /tmp/20140416_one_time_true
+	echo $v
 }
 
 function emoji {
 	[[ -z $1 ]] && echo -n "" && return
-    [[ $(is_first_call) == 1 ]] && echo -n "${EYELLOW}2014/04/16$NO_COLOR "
-    [[ $1 == "yheart" ]] && echo -n 🎗 # 💛
+	[[ $(is_first_call) == 1 ]] && echo -n "${EYELLOW}2014/04/16$NO_COLOR "
+	[[ $1 == "yheart" ]] && echo -n 🎗 # 💛
 	[[ $1 == "scream" ]] && echo -n 😱
 	[[ $1 == "rocket" ]] && echo -n 🚀
 	[[ $1 == "snake" ]] && echo -n 🐍
 	[[ $1 == "fire" ]] && echo -n 🔥
 	[[ $1 == "santa" ]] && echo -n 🎅🏻
 	[[ $1 == "santa2" ]] && echo -n 🎅
-    [[ $1 == "hearted" ]] && echo -n 😍
+	[[ $1 == "hearted" ]] && echo -n 😍
 }

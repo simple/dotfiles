@@ -1,6 +1,0 @@
-#!/bin/bash
-if [ "x$1" != "x" ]; then
-    sqlite3 ~/Dropbox/DashSnippets/library.dash "select body from snippets where title = '$1#'"
-else
-    sqlite3 ~/Dropbox/DashSnippets/library.dash "select title from snippets order by title"
-fi
